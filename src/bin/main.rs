@@ -14,6 +14,8 @@ use tracing_subscriber::{
 
 #[tokio::main]
 async fn main() {
+    dotenv::dotenv().expect("Failed to load a .env file");
+
     let subscriber = FmtSubscriber::builder()
         .with_env_filter(EnvFilter::from_default_env())
         .finish();
