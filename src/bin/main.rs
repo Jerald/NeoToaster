@@ -29,7 +29,8 @@ async fn main() {
     let framework = {
         let framework = StandardFramework::new()
             .configure(|c| c
-                .prefix("nt>")
+                .prefix("t>")
+                .with_whitespace(true)
             );
 
         neotoaster_commands::GROUP_LIST.iter().copied().fold(
